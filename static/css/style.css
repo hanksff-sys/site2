@@ -208,12 +208,14 @@ a { text-decoration: none; color: inherit; }
 .plan-card {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: var(--shadow);
   border: 1px solid rgba(102,0,153,0.08);
   animation: slideUp 0.7s ease both;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
 @keyframes slideUp {
@@ -274,7 +276,6 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #f0f0f0;
-  flex-grow: 1;
 }
 
 .plan-info-item {
@@ -377,15 +378,22 @@ a { text-decoration: none; color: inherit; }
 
 /* PLANS CONTAINER */
 .plans-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.plan-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .plan-card-premium {
   position: relative;
   border: 2px solid var(--vivo-purple);
+  overflow: visible;
 }
 
 .plan-badge {
@@ -400,6 +408,123 @@ a { text-decoration: none; color: inherit; }
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+  z-index: 10;
+}
+
+/* PLAN WIDGET */
+.plan-widget {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.widget-phone {
+  background: #13132a;
+  border-radius: 20px;
+  padding: 12px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.widget-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 0.6rem;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.widget-icons {
+  display: flex;
+  gap: 4px;
+  font-size: 0.55rem;
+}
+
+.widget-circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
+}
+
+.widget-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.widget-circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.widget-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+}
+
+.widget-unit {
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.widget-bar-section {
+  margin-bottom: 10px;
+}
+
+.widget-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.55rem;
+  margin-bottom: 4px;
+}
+
+.widget-bar {
+  height: 5px;
+  background: #2a2a4a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.widget-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9b30d9, #660099);
+  border-radius: 3px;
+}
+
+.widget-apps {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.widget-app {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.widget-app.wpp {
+  background: #25d366;
+}
+
+.widget-app.ig {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
 /* MODAL */
@@ -625,28 +750,55 @@ a { text-decoration: none; color: inherit; }
 }
 
 .contato-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
   background: var(--white);
   border-radius: var(--radius);
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0,0,0,0.04);
   transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .contato-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 80px rgba(102,0,153,0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(102,0,153,0.15);
+}
+
+.contato-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contato-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.contato-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
 }
 
 .contato-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
 }
 
 .whatsapp-icon {
@@ -664,28 +816,18 @@ a { text-decoration: none; color: inherit; }
   color: var(--vivo-purple);
 }
 
-.contato-card h3 {
-  font-size: 1.3rem;
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
-}
-
-.contato-card p {
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-}
-
 .contato-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--vivo-purple);
   font-weight: 700;
+  font-size: 0.88rem;
   transition: gap 0.2s;
 }
 
 .contato-link:hover {
-  gap: 12px;
+  gap: 10px;
 }
 
 /* FOOTER */
@@ -895,6 +1037,12 @@ a { text-decoration: none; color: inherit; }
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(0,0,0,0.04);
   transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-benefit-text {
+  flex: 1;
 }
 
 .card-benefit:hover {
@@ -984,74 +1132,7 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 3rem;
 }
 
-.contato-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: var(--white);
-  border-radius: var(--radius-sm);
-  padding: 1.2rem 1.4rem;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(0,0,0,0.04);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-}
-
-.contato-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-}
-
-.contato-icon {
-  width: 48px; height: 48px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-
-.wpp-card  .contato-icon { background: #25d366; }
-.tel-card  .contato-icon { background: var(--vivo-purple); }
-.email-card .contato-icon { background: var(--vivo-blue); }
-.ig-card   .contato-icon { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
-.fb-card   .contato-icon { background: #1877f2; }
-.x-card    .contato-icon { background: #000; }
-
-.contato-info {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-
-.contato-label {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.contato-value {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-main);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.contato-arrow {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  flex-shrink: 0;
-  transition: transform 0.2s;
-}
-
-.contato-card:hover .contato-arrow { transform: translateX(4px); }
+/* Estilos de contato-card movidos para cima */
 
 /* CTA FINAL */
 .cta-final {
@@ -1536,18 +1617,88 @@ a { text-decoration: none; color: inherit; }
   }
 
   .plans-container {
-    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-
+  /* Cards de plano: empilha verticalmente no mobile */
+  .plan-row {
+    flex-direction: column;
+    gap: 0;
+  }
 
   .plan-card {
-    padding: 1.5rem;
-    min-height: 580px;
+    padding: 1.4rem 1.2rem;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    margin: 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  /* Widget fica abaixo do card, largura total */
+  .plan-widget {
+    width: 100%;
+    flex-shrink: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .widget-phone {
+    padding: 14px 20px;
+    border-radius: 0 0 var(--radius) var(--radius);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+    background: #13132a;
+  }
+
+  .widget-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .widget-status-bar {
+    display: none;
+  }
+
+  .widget-num {
+    font-size: 1.4rem;
+  }
+
+  .widget-unit {
+    font-size: 0.6rem;
+  }
+
+  .widget-bar-section {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .widget-bar-labels {
+    font-size: 0.6rem;
+    margin-bottom: 6px;
+  }
+
+  .widget-bar {
+    height: 6px;
+  }
+
+  .widget-apps {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .widget-app {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+    border-radius: 8px;
   }
 
   .plan-card-header {
@@ -1561,7 +1712,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .gb {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .plan-label {
@@ -1575,7 +1726,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .plan-info-item {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     gap: 8px;
   }
 
@@ -1584,7 +1735,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .price {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .currency {
@@ -1597,8 +1748,8 @@ a { text-decoration: none; color: inherit; }
 
   .btn-como-funciona,
   .btn-contratar {
-    padding: 12px;
-    font-size: 0.9rem;
+    padding: 13px;
+    font-size: 0.95rem;
     margin-bottom: 0.8rem;
   }
 
@@ -1622,21 +1773,41 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 2rem;
   }
 
+  /* Cards de benefícios: layout horizontal com ícone à esquerda */
   .cards-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .card-benefit {
-    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .card-benefit-text {
+    flex: 1;
+    min-width: 0;
   }
 
   .card-benefit h3 {
     font-size: 0.95rem;
+    margin-bottom: 0.3rem;
   }
 
   .card-benefit p {
     font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .apps-grid {
@@ -1648,27 +1819,36 @@ a { text-decoration: none; color: inherit; }
     font-size: 0.9rem;
   }
 
+  /* Cards de contato: centralizados e bem espaçados */
   .contato-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .contato-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 1.1rem 1.2rem;
+    gap: 0.9rem;
   }
 
-  .contato-card h3 {
-    font-size: 1.1rem;
+  .contato-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 1.3rem;
   }
 
-  .contato-card p {
-    font-size: 0.9rem;
+  .contato-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .contato-info p {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
   }
 
   .contato-link {
-    justify-content: center;
+    font-size: 0.82rem;
   }
 }
 
@@ -1702,7 +1882,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .hero {
-    padding: 70px 1rem 30px;
+    padding: 70px 0.75rem 30px;
     gap: 1.5rem;
   }
 
@@ -1724,15 +1904,47 @@ a { text-decoration: none; color: inherit; }
   }
 
   .plans-container {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
+  /* Plano card: padding ajustado para telas pequenas */
   .plan-card {
-    padding: 1.2rem;
-    min-height: 600px;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    padding: 1.1rem 1rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  /* Widget horizontal compacto para telas pequenas */
+  .widget-phone {
+    padding: 10px 14px;
+    gap: 0.9rem;
+  }
+
+  .widget-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .widget-num {
+    font-size: 1.2rem;
+  }
+
+  .widget-unit {
+    font-size: 0.55rem;
+  }
+
+  .widget-bar {
+    height: 5px;
+  }
+
+  .widget-bar-labels {
+    font-size: 0.55rem;
+  }
+
+  .widget-app {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+    border-radius: 6px;
   }
 
   .plan-card-header {
@@ -1750,7 +1962,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .gb {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .plan-label {
@@ -1760,11 +1972,11 @@ a { text-decoration: none; color: inherit; }
   .plan-info-list {
     margin-bottom: 0.8rem;
     padding-bottom: 0.8rem;
-    gap: 0.4rem;
+    gap: 0.45rem;
   }
 
   .plan-info-item {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     gap: 6px;
   }
 
@@ -1777,7 +1989,7 @@ a { text-decoration: none; color: inherit; }
   }
 
   .price {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .period {
@@ -1786,8 +1998,8 @@ a { text-decoration: none; color: inherit; }
 
   .btn-como-funciona,
   .btn-contratar {
-    padding: 11px;
-    font-size: 0.85rem;
+    padding: 12px;
+    font-size: 0.88rem;
     margin-bottom: 0.6rem;
   }
 
@@ -1806,7 +2018,7 @@ a { text-decoration: none; color: inherit; }
   .beneficios,
   .apps-section,
   .contato {
-    padding: 40px 1rem;
+    padding: 40px 0.75rem;
   }
 
   .section-title {
@@ -1818,20 +2030,22 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 1.5rem;
   }
 
+  /* Cards de benefícios: layout horizontal compacto */
   .card-benefit {
-    padding: 1.2rem 0.8rem;
+    padding: 1rem 0.9rem;
+    gap: 0.85rem;
   }
 
   .card-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 12px;
   }
 
   .card-benefit h3 {
     font-size: 0.9rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
   }
 
   .card-benefit p {
@@ -1845,34 +2059,38 @@ a { text-decoration: none; color: inherit; }
 
   .app-pill {
     padding: 8px 16px;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
   }
 
+  /* Cards de contato compactos */
   .contato-card {
-    padding: 1.2rem 0.8rem;
+    padding: 1rem 0.9rem;
+    gap: 0.85rem;
   }
 
   .contato-icon {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 1.1rem;
+    border-radius: 12px;
   }
 
   .contato-card h3 {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
   }
 
   .contato-card p {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    margin-bottom: 0.4rem;
   }
 
   .contato-link {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .footer {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0.75rem;
     font-size: 0.8rem;
   }
 
