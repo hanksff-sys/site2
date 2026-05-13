@@ -2076,6 +2076,51 @@ a { text-decoration: none; color: inherit; }
   font-weight: 500;
 }
 
+.btn-termos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #660099, #9b30d9);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 8px 24px rgba(102,0,153,0.35);
+}
+
+.btn-termos:hover {
+  background: linear-gradient(135deg, #7a1ab3, #a833e8);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(102,0,153,0.45);
+}
+
+.modal-termos-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-termos-content h3 {
+  font-size: 1.2rem;
+  color: var(--vivo-purple);
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-termos-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
 /* RESPONSIVE - TERMOS */
 @media (max-width: 768px) {
   .termos-content {
