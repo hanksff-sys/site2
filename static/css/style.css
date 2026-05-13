@@ -284,6 +284,9 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .plan-info-item i {
@@ -1542,6 +1545,9 @@ a { text-decoration: none; color: inherit; }
   .plan-card {
     padding: 1.5rem;
     min-height: 580px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .plan-card-header {
@@ -1724,6 +1730,9 @@ a { text-decoration: none; color: inherit; }
   .plan-card {
     padding: 1.2rem;
     min-height: 600px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .plan-card-header {
