@@ -380,7 +380,6 @@ a { text-decoration: none; color: inherit; }
 .plan-card-premium {
   position: relative;
   border: 2px solid var(--vivo-purple);
-  transform: scale(1.05);
 }
 
 .plan-badge {
@@ -1535,9 +1534,7 @@ a { text-decoration: none; color: inherit; }
     gap: 1.5rem;
   }
 
-  .plan-card-premium {
-    transform: scale(1);
-  }
+
 
   .plan-card {
     padding: 1.5rem;
@@ -1985,8 +1982,7 @@ a { text-decoration: none; color: inherit; }
    TERMOS DE USO
 =========================== */
 .termos-uso {
-  padding: 80px 2rem;
-  background: linear-gradient(135deg, #f9f7ff 0%, #f0f0ff 50%, #e8d5f5 100%);
+  display: none;
 }
 
 .termos-content {
