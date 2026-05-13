@@ -412,17 +412,35 @@
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   <script>
     function abrirModal() {
-      document.getElementById('modalComoFunciona').style.display = 'block';
+      const modal = document.getElementById('modalComoFunciona');
+      if (modal) modal.style.display = 'block';
     }
 
     function fecharModal() {
-      document.getElementById('modalComoFunciona').style.display = 'none';
+      const modal = document.getElementById('modalComoFunciona');
+      if (modal) modal.style.display = 'none';
     }
 
+    function abrirModalTermos() {
+      const modal = document.getElementById('modalTermos');
+      if (modal) modal.style.display = 'block';
+    }
+
+    function fecharModalTermos() {
+      const modal = document.getElementById('modalTermos');
+      if (modal) modal.style.display = 'none';
+    }
+
+    // Fechar modais ao clicar fora deles
     window.onclick = function(event) {
-      var modal = document.getElementById('modalComoFunciona');
-      if (event.target == modal) {
-        modal.style.display = 'none';
+      const modalFunciona = document.getElementById('modalComoFunciona');
+      const modalTermos = document.getElementById('modalTermos');
+      
+      if (event.target === modalFunciona) {
+        fecharModal();
+      }
+      if (event.target === modalTermos) {
+        fecharModalTermos();
       }
     }
   </script>
