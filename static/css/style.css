@@ -212,6 +212,8 @@ a { text-decoration: none; color: inherit; }
   box-shadow: var(--shadow);
   border: 1px solid rgba(102,0,153,0.08);
   animation: slideUp 0.7s ease both;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes slideUp {
@@ -272,6 +274,7 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #f0f0f0;
+  flex-grow: 1;
 }
 
 .plan-info-item {
@@ -1538,6 +1541,7 @@ a { text-decoration: none; color: inherit; }
 
   .plan-card {
     padding: 1.5rem;
+    min-height: 580px;
   }
 
   .plan-card-header {
@@ -1719,6 +1723,7 @@ a { text-decoration: none; color: inherit; }
 
   .plan-card {
     padding: 1.2rem;
+    min-height: 600px;
   }
 
   .plan-card-header {
