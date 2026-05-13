@@ -49,88 +49,176 @@
       <!-- CONTAINER DE PLANOS -->
       <div class="plans-container">
         <!-- PLANO ILIMITADO -->
-        <div class="plan-card plan-card-premium">
-          <div class="plan-badge">Mais Popular</div>
-          <div class="plan-card-header">
-            <div class="wifi-icon">
-              <i class="fas fa-infinity"></i>
+        <div class="plan-row">
+          <div class="plan-card plan-card-premium">
+            <div class="plan-badge">Mais Popular</div>
+            <div class="plan-card-header">
+              <div class="wifi-icon">
+                <i class="fas fa-infinity"></i>
+              </div>
+              <div class="plan-data">
+                <span class="gb">ILIMITADO</span>
+                <span class="plan-label">Sem Limite</span>
+              </div>
             </div>
-            <div class="plan-data">
-              <span class="gb">ILIMITADO</span>
-              <span class="plan-label">Sem Limite</span>
+            <div class="plan-info-list">
+              <div class="plan-info-item">
+                <i class="fas fa-star"></i>
+                <span><strong>Netflix Premium</strong> incluído via operadora</span>
+              </div>
+              <div class="plan-info-item">
+                <i class="fas fa-star"></i>
+                <span><strong>YouTube Premium</strong> incluído via operadora</span>
+              </div>
+              <div class="plan-info-item">
+                <i class="fas fa-circle-info"></i>
+                <span>Navegação ilimitada em velocidade total</span>
+              </div>
+              <div class="plan-info-item">
+                <i class="fas fa-clock"></i>
+                <span>Sem permanência mínima</span>
+              </div>
+              <div class="plan-info-item">
+                <i class="fas fa-check"></i>
+                <span>Chip físico e virtual disponíveis</span>
+              </div>
+            </div>
+            <div class="plan-price">
+              <span class="currency">R$</span>
+              <span class="price">120,00</span>
+              <span class="period">/mês</span>
+            </div>
+            <button class="btn-como-funciona" onclick="abrirModal()">
+              <i class="fas fa-question-circle"></i> Como funciona
+            </button>
+            <a href="https://wa.me/98988330665" target="_blank" class="btn-contratar btn-contratar-premium">
+              <i class="fab fa-whatsapp"></i> Quero contratar
+            </a>
+          </div>
+          <!-- Widget Visual Ilimitado -->
+          <div class="plan-widget">
+            <div class="widget-phone">
+              <div class="widget-status-bar">
+                <span>9:41</span>
+                <div class="widget-icons">
+                  <i class="fas fa-signal"></i>
+                  <i class="fas fa-wifi"></i>
+                  <i class="fas fa-battery-full"></i>
+                </div>
+              </div>
+              <div class="widget-circle">
+                <svg viewBox="0 0 120 120" class="widget-svg">
+                  <circle cx="60" cy="60" r="50" stroke="#2a2a4a" stroke-width="8" fill="none"/>
+                  <circle cx="60" cy="60" r="50" stroke="url(#gradIlimitado)" stroke-width="8" fill="none" stroke-dasharray="290 314" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+                  <defs>
+                    <linearGradient id="gradIlimitado" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#9b30d9"/>
+                      <stop offset="100%" stop-color="#660099"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="widget-circle-text">
+                  <span class="widget-num">&infin;</span>
+                  <span class="widget-unit">GB</span>
+                </div>
+              </div>
+              <div class="widget-bar-section">
+                <div class="widget-bar-labels">
+                  <span>Franquia</span>
+                  <span>Ilimitado</span>
+                </div>
+                <div class="widget-bar">
+                  <div class="widget-bar-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+              <div class="widget-apps">
+                <div class="widget-app wpp"><i class="fab fa-whatsapp"></i></div>
+                <div class="widget-app ig"><i class="fab fa-instagram"></i></div>
+              </div>
             </div>
           </div>
-          <div class="plan-info-list">
-            <div class="plan-info-item">
-              <i class="fas fa-star"></i>
-              <span><strong>Netflix Premium</strong> incluído via operadora</span>
-            </div>
-            <div class="plan-info-item">
-              <i class="fas fa-star"></i>
-              <span><strong>YouTube Premium</strong> incluído via operadora</span>
-            </div>
-            <div class="plan-info-item">
-              <i class="fas fa-circle-info"></i>
-              <span>Navegação ilimitada em velocidade total</span>
-            </div>
-            <div class="plan-info-item">
-              <i class="fas fa-clock"></i>
-              <span>Sem permanência mínima</span>
-            </div>
-            <div class="plan-info-item">
-              <i class="fas fa-check"></i>
-              <span>Chip físico e virtual disponíveis</span>
-            </div>
-          </div>
-          <div class="plan-price">
-            <span class="currency">R$</span>
-            <span class="price">120,00</span>
-            <span class="period">/mês</span>
-          </div>
-          <button class="btn-como-funciona" onclick="abrirModal()">
-            <i class="fas fa-question-circle"></i> Como funciona
-          </button>
-          <a href="https://wa.me/98988330665" target="_blank" class="btn-contratar btn-contratar-premium">
-            <i class="fab fa-whatsapp"></i> Quero contratar
-          </a>
         </div>
 
         <!-- PLANO 500GB -->
-        <div class="plan-card plan-card-premium">
-          <div class="plan-card-header">
-            <div class="wifi-icon">
-              <i class="fas fa-wifi"></i>
+        <div class="plan-row">
+          <div class="plan-card plan-card-premium">
+            <div class="plan-card-header">
+              <div class="wifi-icon">
+                <i class="fas fa-wifi"></i>
+              </div>
+              <div class="plan-data">
+                <span class="gb">500GB</span>
+                <span class="plan-label">Franquia</span>
+              </div>
             </div>
-            <div class="plan-data">
-              <span class="gb">500GB</span>
-              <span class="plan-label">Franquia</span>
+            <div class="plan-info-list">
+              <div class="plan-info-item">
+                <i class="fas fa-circle-info"></i>
+                <span>Após consumo, navegue em velocidade reduzida</span>
+              </div>
+              <div class="plan-info-item">
+                <i class="fas fa-clock"></i>
+                <span>Sem permanência mínima</span>
+              </div>
+              <div class="plan-info-item">
+                <i class="fas fa-check"></i>
+                <span>Chip físico e virtual disponíveis</span>
+              </div>
+            </div>
+            <div class="plan-price">
+              <span class="currency">R$</span>
+              <span class="price">85,00</span>
+              <span class="period">/mês</span>
+            </div>
+            <button class="btn-como-funciona" onclick="abrirModal()">
+              <i class="fas fa-question-circle"></i> Como funciona
+            </button>
+            <a href="https://wa.me/98988330665" target="_blank" class="btn-contratar btn-contratar-premium">
+              <i class="fab fa-whatsapp"></i> Quero contratar
+            </a>
+          </div>
+          <!-- Widget Visual 500GB -->
+          <div class="plan-widget">
+            <div class="widget-phone">
+              <div class="widget-status-bar">
+                <span>9:41</span>
+                <div class="widget-icons">
+                  <i class="fas fa-signal"></i>
+                  <i class="fas fa-wifi"></i>
+                  <i class="fas fa-battery-full"></i>
+                </div>
+              </div>
+              <div class="widget-circle">
+                <svg viewBox="0 0 120 120" class="widget-svg">
+                  <circle cx="60" cy="60" r="50" stroke="#2a2a4a" stroke-width="8" fill="none"/>
+                  <circle cx="60" cy="60" r="50" stroke="url(#grad500)" stroke-width="8" fill="none" stroke-dasharray="220 314" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+                  <defs>
+                    <linearGradient id="grad500" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#9b30d9"/>
+                      <stop offset="100%" stop-color="#660099"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="widget-circle-text">
+                  <span class="widget-num">500</span>
+                  <span class="widget-unit">GB</span>
+                </div>
+              </div>
+              <div class="widget-bar-section">
+                <div class="widget-bar-labels">
+                  <span>Usado</span>
+                  <span>500GB</span>
+                </div>
+                <div class="widget-bar">
+                  <div class="widget-bar-fill" style="width: 70%;"></div>
+                </div>
+              </div>
+              <div class="widget-apps">
+                <div class="widget-app wpp"><i class="fab fa-whatsapp"></i></div>
+                <div class="widget-app ig"><i class="fab fa-instagram"></i></div>
+              </div>
             </div>
           </div>
-          <div class="plan-info-list">
-            <div class="plan-info-item">
-              <i class="fas fa-circle-info"></i>
-              <span>Após consumo da franquia, navegue em velocidade reduzida.</span>
-            </div>
-            <div class="plan-info-item">
-              <i class="fas fa-clock"></i>
-              <span>Sem permanência mínima</span>
-            </div>
-            <div class="plan-info-item">
-              <i class="fas fa-check"></i>
-              <span>Chip físico e virtual disponíveis</span>
-            </div>
-          </div>
-          <div class="plan-price">
-            <span class="currency">R$</span>
-            <span class="price">85,00</span>
-            <span class="period">/mês</span>
-          </div>
-          <button class="btn-como-funciona" onclick="abrirModal()">
-            <i class="fas fa-question-circle"></i> Como funciona
-          </button>
-          <a href="https://wa.me/98988330665" target="_blank" class="btn-contratar btn-contratar-premium">
-            <i class="fab fa-whatsapp"></i> Quero contratar
-          </a>
         </div>
       </div>
     </div>
@@ -177,29 +265,37 @@
           <div class="card-icon purple">
             <i class="fas fa-infinity"></i>
           </div>
-          <h3>Navegação Ilimitada</h3>
-          <p>Escolha entre 500GB com redução de velocidade ou Ilimitado em velocidade total. Sem surpresas.</p>
+          <div class="card-benefit-text">
+            <h3>Navegação Ilimitada</h3>
+            <p>Escolha entre 500GB com redução de velocidade ou Ilimitado em velocidade total. Sem surpresas.</p>
+          </div>
         </div>
         <div class="card-benefit">
           <div class="card-icon green">
             <i class="fas fa-lock-open"></i>
           </div>
-          <h3>Sem Fidelidade</h3>
-          <p>Sem permanência mínima. Você tem total liberdade para cancelar quando quiser.</p>
+          <div class="card-benefit-text">
+            <h3>Sem Fidelidade</h3>
+            <p>Sem permanência mínima. Você tem total liberdade para cancelar quando quiser.</p>
+          </div>
         </div>
         <div class="card-benefit">
           <div class="card-icon blue">
             <i class="fas fa-mobile-screen"></i>
           </div>
-          <h3>Apps Gratuitos</h3>
-          <p>WhatsApp e Instagram não consomem sua franquia de dados.</p>
+          <div class="card-benefit-text">
+            <h3>Apps Gratuitos</h3>
+            <p>WhatsApp e Instagram não consomem sua franquia de dados.</p>
+          </div>
         </div>
         <div class="card-benefit">
           <div class="card-icon orange">
             <i class="fas fa-headset"></i>
           </div>
-          <h3>Suporte Dedicado</h3>
-          <p>Atendimento rápido e personalizado via WhatsApp, e-mail ou redes sociais.</p>
+          <div class="card-benefit-text">
+            <h3>Suporte Dedicado</h3>
+            <p>Atendimento rápido e personalizado via WhatsApp, e-mail ou redes sociais.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -230,38 +326,38 @@
       <p class="section-subtitle">Estamos prontos para ajudar você a escolher o melhor plano.</p>
       
       <div class="contato-grid">
-        <div class="contato-card">
+        <a href="https://wa.me/98988330665" target="_blank" class="contato-card">
           <div class="contato-icon whatsapp-icon">
             <i class="fab fa-whatsapp"></i>
           </div>
-          <h3>WhatsApp</h3>
-          <p>(98) 98833-0665</p>
-          <a href="https://wa.me/98988330665" target="_blank" class="contato-link">
-            Enviar mensagem <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+          <div class="contato-info">
+            <h3>WhatsApp</h3>
+            <p>(98) 98833-0665</p>
+            <span class="contato-link">Enviar mensagem <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
 
-        <div class="contato-card">
+        <a href="https://instagram.com/eliproxy" target="_blank" class="contato-card">
           <div class="contato-icon instagram-icon">
             <i class="fab fa-instagram"></i>
           </div>
-          <h3>Instagram</h3>
-          <p>@eliproxy</p>
-          <a href="https://instagram.com/eliproxy" target="_blank" class="contato-link">
-            Seguir <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+          <div class="contato-info">
+            <h3>Instagram</h3>
+            <p>@eliproxy</p>
+            <span class="contato-link">Seguir <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
 
-        <div class="contato-card">
+        <a href="mailto:eliproxy5@gmail.com" class="contato-card">
           <div class="contato-icon email-icon">
             <i class="fas fa-envelope"></i>
           </div>
-          <h3>Email</h3>
-          <p>eliproxy5@gmail.com</p>
-          <a href="mailto:eliproxy5@gmail.com" class="contato-link">
-            Enviar email <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+          <div class="contato-info">
+            <h3>Email</h3>
+            <p>eliproxy5@gmail.com</p>
+            <span class="contato-link">Enviar email <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
