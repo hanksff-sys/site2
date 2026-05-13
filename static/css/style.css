@@ -1620,24 +1620,25 @@ a { text-decoration: none; color: inherit; }
     gap: 1.5rem;
   }
 
-  /* Cards de plano: empilha verticalmente no mobile */
+  /* Cards de plano: mantém lado a lado com tamanhos reduzidos */
   .plan-row {
-    flex-direction: column;
-    gap: 0;
+    flex-direction: row;
+    gap: 0.6rem;
+    align-items: stretch;
   }
 
   .plan-card {
-    padding: 1.4rem 1.2rem;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 1rem 0.8rem;
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    border-radius: var(--radius);
   }
 
-  /* Widget fica abaixo do card, largura total */
+  /* Widget fica ao lado do card */
   .plan-widget {
-    width: 100%;
-    flex-shrink: unset;
+    width: 130px;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1645,19 +1646,19 @@ a { text-decoration: none; color: inherit; }
   }
 
   .widget-phone {
-    padding: 14px 20px;
-    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 12px 12px;
+    border-radius: var(--radius);
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
+    gap: 8px;
     background: #13132a;
   }
 
   .widget-circle {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: 0;
     flex-shrink: 0;
   }
@@ -1667,38 +1668,39 @@ a { text-decoration: none; color: inherit; }
   }
 
   .widget-num {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .widget-unit {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 
   .widget-bar-section {
     flex: 1;
     margin-bottom: 0;
+    display: none;
   }
 
   .widget-bar-labels {
-    font-size: 0.6rem;
-    margin-bottom: 6px;
+    font-size: 0.55rem;
+    margin-bottom: 4px;
   }
 
   .widget-bar {
-    height: 6px;
+    height: 4px;
   }
 
   .widget-apps {
-    flex-direction: column;
-    gap: 6px;
+    flex-direction: row;
+    gap: 4px;
     align-items: center;
   }
 
   .widget-app {
-    width: 30px;
-    height: 30px;
-    font-size: 0.8rem;
-    border-radius: 8px;
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+    border-radius: 6px;
   }
 
   .plan-card-header {
