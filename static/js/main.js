@@ -73,3 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Funções para modal de termos
+function abrirModalTermos() {
+  const modal = document.getElementById('modalTermos');
+  if (modal) {
+    modal.style.display = 'block';
+  }
+}
+
+function fecharModalTermos() {
+  const modal = document.getElementById('modalTermos');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// Fechar modal ao clicar fora dele
+window.addEventListener('click', function(event) {
+  const modalTermos = document.getElementById('modalTermos');
+  if (event.target === modalTermos) {
+    fecharModalTermos();
+  }
+});
